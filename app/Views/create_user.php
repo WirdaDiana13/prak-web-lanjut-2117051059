@@ -19,12 +19,23 @@
             <br><div class="input-field">
                 <input type="text" class="input" name="nama" placeholder="Masukkan Nama" required>
             </div>
+
             <br><div class="input-field">
                 <input type="text" class="input" name="npm" placeholder="Masukkan NPM" required>
             </div>
-            <br><div class="input-field">
-                <input type="text" class="input" name="kelas" placeholder="Masukkan Kelas" required>
-            </div>
+
+            <select name="kelas" id="kelas">
+                <?php
+                foreach ($kelas as $item){
+                ?>
+                <option value="<?= $item['id'] ?>">
+                            <?= $item['nama_kelas'] ?>
+                </option>
+            <?php
+                }
+                ?>
+            </select>
+
             <br><div class="input-field">
                 <input type="submit" class="submit" value="Login">
             </div>
