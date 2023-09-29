@@ -17,11 +17,19 @@
             </div>
 
             <br><div class="input-field">
-                <input type="text" class="input" name="nama" placeholder="Masukkan Nama" required>
+                <input type="text"  name="nama" placeholder="Masukkan Nama" class="form-control 
+            <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" id="nama" autofocus>
+                <div class="invalid-feedback">
+                    <?= $validation->getError('nama') ?>
+                </div>
             </div>
 
             <br><div class="input-field">
-                <input type="text" class="input" name="npm" placeholder="Masukkan NPM" required>
+                <input type="text" name="npm" placeholder="Masukkan NPM" class="form-control 
+            <?= ($validation->hasError('npm')) ? 'is-invalid' : ''; ?>" id="npm" autofocus>
+            <div class="invalid-feedback">
+            <?= $validation->getError('npm') ?>
+            </div>
             </div>
 
             <select name="kelas" id="kelas">

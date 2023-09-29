@@ -16,7 +16,7 @@
       <center>
         <h1>Nama :<?=$nama ?></h1>
         <h2>NPM :<?=$npm ?></h2>
-        <h3>Kelas :<?=$kelas ?></h3>
+        <h3>Kelas :<?=$id_kelas ?></h3>
         </center>
     </div>
 
