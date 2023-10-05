@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?=base_url("assets/css/style.css")?>">
-    <title>Login</title>
-</head>
-<body>
+<?= $this->extend('layouts/app')?>
+<?= $this->section('content') ?>
+<div>
+
     <div class="box">
         <div class="container">
             <div class="top-header">
@@ -17,11 +11,19 @@
             </div>
 
             <br><div class="input-field">
-                <input type="text" class="input" name="nama" placeholder="Masukkan Nama" required>
+                <input type="text"  name="nama" placeholder="Masukkan Nama" class="form-control 
+            <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" id="nama" autofocus>
+                <div class="invalid-feedback">
+                    <?= $validation->getError('nama') ?>
+                </div>
             </div>
 
             <br><div class="input-field">
-                <input type="text" class="input" name="npm" placeholder="Masukkan NPM" required>
+                <input type="text" name="npm" placeholder="Masukkan NPM" class="form-control 
+            <?= ($validation->hasError('npm')) ? 'is-invalid' : ''; ?>" id="npm" autofocus>
+            <div class="invalid-feedback">
+            <?= $validation->getError('npm') ?>
+            </div>
             </div>
 
             <select name="kelas" id="kelas">
@@ -44,5 +46,8 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+
+
+
+</div>
+<?= $this->endSection() ?>
