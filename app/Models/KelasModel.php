@@ -22,5 +22,8 @@ class KelasModel extends Model
     protected $updatedField  = 'updated_at';
     protected $deletedField  = 'deleted_at';
 
+    public function getKelas(){
+        return $this->findAll();
+    }
     
 }
