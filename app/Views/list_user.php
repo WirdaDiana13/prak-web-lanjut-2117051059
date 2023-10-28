@@ -2,6 +2,7 @@
 
 <?= $this->section('content') ?>
 
+
 <table class = "table"  >
     <thead class ="table-dark">
             <th>ID</th>
@@ -20,7 +21,9 @@
                 <td><?= $user['npm'] ?> </td>
                 <td><?= $user['nama_kelas'] ?></td>
                 <td>
-                <a href="" class="btn btn-sm btn-warning">Edit</a>
+                <a href="<?= base_url('user/' . $user['id']) ?>">Detail</a>
+                <a href="<?= base_url('user/' . $user['id'] . '/edit') ?>">Edit</a>
+                <!-- <a href="" class="btn btn-sm btn-warning">Edit</a> -->
                 <a href="" class="btn btn-sm btn-danger">Delete</a>
                 </td>
 
