@@ -2,6 +2,7 @@
 
 <?= $this->section('content') ?>
 
+<a href="<?= base_url('/user/create') ?>"><Button class="btn btn-primary" style="margin-top : 20px; margin-left : 20px; margin-bottom : 30px;">Tambah Data</Button></a>
 
 <table class = "table"  >
     <thead class ="table-dark">
@@ -24,7 +25,12 @@
                 <a href="<?= base_url('user/' . $user['id']) ?>">Detail</a>
                 <a href="<?= base_url('user/' . $user['id'] . '/edit') ?>">Edit</a>
                 <!-- <a href="" class="btn btn-sm btn-warning">Edit</a> -->
-                <a href="" class="btn btn-sm btn-danger">Delete</a>
+                <form action="<?= base_url('user/' . $user['id']) ?>" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                <?= csrf_field() ?>
+                <button type="submit">Delete</button>
+
+                </form>
                 </td>
 
             </tr>

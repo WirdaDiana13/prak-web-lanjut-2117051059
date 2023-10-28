@@ -8,7 +8,7 @@
     <form class="container" action="<?= base_url('/user/' . $user['id']) ?>" 
     method="POST" enctype="multipart/form-data">
 
-             <input type="hidden" name="_method" valuve="PUT"> 
+             <input type="hidden" name="_method" value="PUT"> 
              <?= csrf_field() ?>
 
 
@@ -23,19 +23,11 @@
 
 
             <br><div class="input-field">
-                <input type="text"  name="nama" placeholder="Masukkan Nama" class="form-control <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" value="<?= $user['nama'] ?>" id="nama"
-            id="nama" autofocus>
-                <div class="invalid-feedback">
-                    <?= $validation->getError('nama') ?>
-                </div>
+                <input type="text"  name="nama" placeholder="Masukkan Nama" id="input" value="<?= $user['nama']  ?>">
             </div>
 
             <br><div class="input-field">
-                <input type="text" name="npm" placeholder="Masukkan NPM" class="form-control<?= ($validation->hasError('npm')) ? 'is-invalid' : ''; ?>" value="<?= $user['npm'] ?>" id="npm"
-             id="npm" autofocus>
-            <div class="invalid-feedback">
-            <?= $validation->getError('npm') ?>
-            </div>
+                <input type="text" name="npm" placeholder="Masukkan NPM" id="input" value="<?= $user['npm']  ?>">
             </div>
 
             <select name="kelas" id="kelas">
