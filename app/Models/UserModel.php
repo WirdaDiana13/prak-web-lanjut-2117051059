@@ -39,7 +39,11 @@ class UserModel extends Model
     }
 
     public function updateUser($data, $id){
-        return $this->upedate($id, $data);
+        return $this->update($id, $data);
+    }
+
+    public function deleteUser($id){
+        return $this->delete($id);
     }
 
 }

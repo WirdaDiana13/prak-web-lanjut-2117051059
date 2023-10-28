@@ -218,7 +218,7 @@ class UserController extends BaseController
 
                 $data['foto'] = $foto_path;
 
-            }
+                }
             }
 
         $result = $this->userModel->updateUser($data, $id);
@@ -228,6 +228,15 @@ class UserController extends BaseController
             ->with('error', 'Gagal menyimpan data');
         }
         return redirect()->to(base_url('/user'));
+        }
+
+        public function destroy($id){
+            $result = $this->userModel->deleteUser($id);
+            if (!$result) {
+                return redirect()->back()->with('error', 'Gagal menghapus data');
+            }
+            return redirect()->to(base_url('/user'))
+            ->with('success', 'Berhasil menghapus data');
         }
     }
 
