@@ -2,7 +2,7 @@
 
 <?= $this->section('content') ?>
 
-<a href="<?= base_url('/user/create') ?>"><Button class="btn btn-primary" style="margin-top : 20px; margin-left : 20px; margin-bottom : 30px;">Tambah Data</Button></a>
+<a href="<?= base_url('/kelas/create') ?>"><Button class="btn btn-primary" style="margin-top : 20px; margin-left : 20px; margin-bottom : 30px;">Tambah Data</Button></a>
 
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
@@ -11,7 +11,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav" >
             <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="<?= base_url('/user') ?>" style="margin-left : 100px; font-size : 20px;">User</a>
             </li>
@@ -26,8 +26,6 @@
 <table class = "table"  >
     <thead class ="table-dark">
             <th>ID</th>
-            <th>Nama</th>
-            <th>NPM</th>
             <th>Kelas</th>
             <th>Aksi</th>
     </thead>
@@ -37,14 +35,12 @@
          ?>
             <tr>
                 <td><?= $user['id'] ?></td>
-                <td><?= $user['nama'] ?> </td>
-                <td><?= $user['npm'] ?> </td>
                 <td><?= $user['nama_kelas'] ?></td>
                 <td>
-                <a href="<?= base_url('user/' . $user['id']) ?>">Detail</a>
-                <a href="<?= base_url('user/' . $user['id'] . '/edit') ?>">Edit</a>
+                <a href="<?= base_url('kelas/' . $user['id']) ?>">Detail</a>
+                <a href="<?= base_url('kelas/' . $user['id'] . '/edit') ?>">Edit</a>
                 <!-- <a href="" class="btn btn-sm btn-warning">Edit</a> -->
-                <form action="<?= base_url('user/' . $user['id']) ?>" method="post">
+                <form action="<?= base_url('kelas/' . $user['id']) ?>" method="post">
                 <input type="hidden" name="_method" value="DELETE">
                 <?= csrf_field() ?>
                 <button type="submit">Delete</button>

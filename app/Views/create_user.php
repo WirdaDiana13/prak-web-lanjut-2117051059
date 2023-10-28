@@ -7,8 +7,7 @@
             <div class="top-header">
     <form class="container" action="<?= base_url('/user/store') ?>" 
     method="POST" enctype="multipart/form-data">
-                <span>Welcome</span>
-                <header>LOGIN</header>
+                <header>CREATE</header>
             </div>
 
             <br><div class="input-field">

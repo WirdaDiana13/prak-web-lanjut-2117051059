@@ -12,8 +12,7 @@
              <?= csrf_field() ?>
 
 
-                <span>Welcome</span>
-                <header>Data Mahasiswa</header>
+                <header>EDIT</header>
             </div>
 
             <br><div class="input-field">
