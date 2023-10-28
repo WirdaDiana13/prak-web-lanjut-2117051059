@@ -5,40 +5,39 @@
     <div class="box">
         <div class="container">
             <div class="top-header">
-    <form class="container" action="<?= base_url('/user/store') ?>" 
+    <form class="container" action="<?= base_url('/user/' . $user['id']) ?>" 
     method="POST" enctype="multipart/form-data">
+
+             <input type="hidden" name="_method" value="PUT"> 
+             <?= csrf_field() ?>
+
+
                 <span>Welcome</span>
-                <header>LOGIN</header>
+                <header>Data Mahasiswa</header>
             </div>
 
             <br><div class="input-field">
+                <img src="<?= $user['foto'] ?? '<default-foto>' ?>">
                 <input type="file"  name="foto" placeholder="upload file" class="form-control 
             <?= ($validation->hasError('file')) ? 'is-invalid' : ''; ?>" id="file" autofocus>
 
 
             <br><div class="input-field">
-                <input type="text"  name="nama" placeholder="Masukkan Nama" class="form-control 
-            <?= ($validation->hasError('nama')) ? 'is-invalid' : ''; ?>" id="nama" autofocus>
-                <div class="invalid-feedback">
-                    <?= $validation->getError('nama') ?>
-                </div>
+                <input type="text"  name="nama" placeholder="Masukkan Nama" id="input" value="<?= $user['nama']  ?>">
             </div>
 
             <br><div class="input-field">
-                <input type="text" name="npm" placeholder="Masukkan NPM" class="form-control 
-            <?= ($validation->hasError('npm')) ? 'is-invalid' : ''; ?>" id="npm" autofocus>
-            <div class="invalid-feedback">
-            <?= $validation->getError('npm') ?>
-            </div>
+                <input type="text" name="npm" placeholder="Masukkan NPM" id="input" value="<?= $user['npm']  ?>">
             </div>
 
             <select name="kelas" id="kelas">
                 <?php
                 foreach ($kelas as $item){
                 ?>
-                <option value="<?= $item['id'] ?>">
+                <option value="<?= $item['id'] ?>" <?= $user['id_kelas'] == $item['id'] ? 'selected' : '' ?> >
                             <?= $item['nama_kelas'] ?>
                 </option>
+                
             <?php
                 }
                 ?>
